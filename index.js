@@ -4,7 +4,6 @@ let addHeaders = {
   "X-XSS-Protection": "1; mode=block",
   "X-Frame-Options": "SAMEORIGIN",
   "X-Content-Type-Options": "nosniff",
-  "Referrer-Policy": "same-origin"
 }
 
 // 
@@ -15,7 +14,7 @@ addEventListener("fetch", event => {
 async function fetchAndApply(request) {
   // Fetch the original page from the origin
   let response = await fetch(request)
-  
+
   // Make response headers mutable
   response = new Response(response.body, response)
 
